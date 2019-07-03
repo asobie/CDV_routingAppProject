@@ -1,0 +1,44 @@
+@mixin grid($cols, $mgn) {
+  float: left;
+  margin-right: $mgn;
+  margin-bottom: $mgn;
+  width: ((100% - (($cols - 1) * $mgn)) / $cols);
+
+  &:nth-child(#{$cols}n) {
+    margin-right: 0;
+  }
+}
+
+h1 {
+  text-align: center;
+  margin: 5vh;
+}
+
+section {
+  margin: 50px 200px;
+
+  li {
+    @include grid(4, 5%);
+    list-style-type: none;
+    padding: 15px;
+    text-align: center;
+
+    h3 {
+      font-size: 16px;
+      width: 13vw;
+      transition: 0.3s;
+      opacity: 0.5;
+    }
+
+    img {
+      width: 10vw;
+      height: 10vw;
+      overflow: hidden;
+      box-shadow: -10px 10px 20px grey;
+    }
+
+    h3:hover {
+      opacity: 1;
+    }
+  }
+}

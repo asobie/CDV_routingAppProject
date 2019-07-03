@@ -1,0 +1,48 @@
+<html>
+  <body>
+    <nav class="primaryNav">
+      <li>
+        <ul>
+          <a
+            routerLink="about"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            Contact</a
+          >
+        </ul>
+        <ul>
+          <a
+            routerLink="login"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            login/register</a
+          >
+        </ul>
+      </li>
+    </nav>
+
+    <a routerLink="" routerLinkActive="active">
+      <div>
+        <img
+          src="http://colombodiary.com/wp-content/uploads/2016/04/EVERGREEN.jpg"
+        />
+        <h1 class="companyName">evergreen marine corp.</h1>
+      </div>
+    </a>
+    <nav class="secondaryNav">
+      <li>
+        <ul>
+          <a routerLink="schedules" routerLinkActive="active"> schedule</a>
+        </ul>
+        <ul>
+          <a routerLink="track" routerLinkActive="active"> track</a>
+        </ul>
+        <ul>
+          <a routerLink="solutions" routerLinkActive="active"> solutions</a>
+        </ul>
+      </li>
+    </nav>
+  </body>
+</html>

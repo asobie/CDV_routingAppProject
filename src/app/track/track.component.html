@@ -1,0 +1,97 @@
+<script
+  type="text/javascript"
+  src="https://www.vesselfinder.com/aismap.js"
+></script>
+<section>
+  <div [hidden]="submitted">
+    <h1>Track your shipment</h1>
+    <form (ngSubmit)="onSubmit()" #track="ngForm">
+      <div class="form-group">
+        <label for="containerNumber">Container number</label>
+        <input
+          type="text"
+          class="form-control"
+          id="containerNumber"
+          required
+          [(ngModel)]="model.containerNumber"
+          name="containerNumber"
+          placeholder="eg. TGHU589547"
+          #containerNumber="ngModel"
+        />
+        <div
+          [hidden]="containerNumber.valid || containerNumber.pristine"
+          class="alert alert-danger"
+        >
+          Container number is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="size">Container size</label>
+        <select
+          class="form-control"
+          id="size"
+          required
+          [(ngModel)]="model.size"
+          name="size"
+          #size="ngModel"
+        >
+          <option *ngFor="let size of sizes" [value]="size">{{ size }}</option>
+        </select>
+      </div>
+      <div [hidden]="size.valid || size.pristine" class="alert alert-danger">
+        Container size is required
+      </div>
+
+      <div class="form-group">
+        <label for="condition">Condition</label>
+        <select
+          class="form-control"
+          id="condition"
+          required
+          [(ngModel)]="model.condition"
+          name="condition"
+          #size="ngModel"
+        >
+          <option *ngFor="let condition of condition" [value]="condition">{{
+            condition
+          }}</option>
+        </select>
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="!track.form.valid"
+      >
+        Track
+      </button>
+      <button type="button" class="btn btn-default" (click)="newSearch()">
+        New Search
+      </button>
+    </form>
+  </div>
+</section>
+<section>
+  <div [hidden]="!submitted">
+    <h2>Your shipment:</h2>
+    <div class="row">
+      <div class="col-xs-2">Container Number</div>
+      <div class="col-xs-4">{{ model.containerNumber }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-2">condition</div>
+      <div class="col-xs-4">{{ model.condition }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-2">Size</div>
+      <div class="col-xs-4">{{ model.size }}</div>
+    </div>
+    <br />
+
+    <img src="../assets/img/container_tracking.JPG" alt="" />
+    <button class="btn btn-primary, returnBtn" (click)="submitted = false">
+      Return
+    </button>
+  </div>
+</section>

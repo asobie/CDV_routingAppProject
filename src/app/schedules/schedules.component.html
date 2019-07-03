@@ -1,0 +1,100 @@
+<section>
+  <div [hidden]="submitted">
+    <h1>Check our schedules</h1>
+    <form (ngSubmit)="onSubmit()" #schedules="ngForm">
+      <div class="form-group">
+        <label for="portOfLoading">Port of loading</label>
+        <input
+          type="text"
+          class="form-control"
+          id="portOfLoading"
+          required
+          [(ngModel)]="model.portOfLoading"
+          name="portOfLoading"
+          placeholder="eg. Chennai"
+          #portOfLoading="ngModel"
+        />
+
+        <div
+          [hidden]="portOfLoading.valid || portOfLoading.pristine"
+          class="alert alert-danger"
+        >
+          Port of loading is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="portOfDischarge">Port of Discharge</label>
+        <input
+          type="text"
+          class="form-control"
+          id="portOfDischarge"
+          required
+          [(ngModel)]="model.portOfDischarge"
+          name="portOfDischarge"
+          placeholder="eg. Gdansk"
+          #portOfDischarge="ngModel"
+        />
+        <div
+          [hidden]="portOfDischarge.valid || portOfDischarge.pristine"
+          class="alert alert-danger"
+        >
+          Port of Discharge is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="containerType">container type</label>
+        <select
+          class="form-control"
+          id="containerType"
+          required
+          [(ngModel)]="model.containerType"
+          name="containerType"
+        >
+          <option *ngFor="let type of containerType" [value]="type">{{
+            type
+          }}</option>
+        </select>
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="!schedules.form.valid"
+      >
+        Search schedules
+      </button>
+      <button
+        type="button"
+        class="btn btn-default"
+        (click)="newSchedules(); schedules.reset()"
+      >
+        New Schedule
+      </button>
+    </form>
+  </div>
+</section>
+
+<section>
+  <div [hidden]="!submitted">
+    <h2>Chosen schedule:</h2>
+    <div class="row">
+      <div class="col-xs-3">port of loading</div>
+      <div class="col-xs-9">{{ model.portOfLoading }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">port of discharge</div>
+      <div class="col-xs-9">{{ model.portOfDischarge }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">container type</div>
+      <div class="col-xs-9">{{ model.containerType }}</div>
+    </div>
+    <br />
+    <img src="../assets/img/schedule.JPG" alt="" />
+    <button class="btn btn-primary, returnBtn" (click)="submitted = false">
+      Return
+    </button>
+  </div>
+</section>

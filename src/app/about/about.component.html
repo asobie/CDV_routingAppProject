@@ -1,0 +1,23 @@
+<h1>Our consultants</h1>
+<section id="grid">
+  <ul>
+    <li *ngFor="let user of users$">
+      <h3>
+        {{ user.name }}
+        <h4>
+          <a
+            href="mailto:{{
+              user.email
+            }}?cc=consultant2@evergreen.com&bcc=consultant3@evergreen.com&subject=EVERGREEN LINE - predefined subject of the email&body='Hello,
+            Candy canes soufflé topping lollipop. Gummi bears brownie caramels cake sweet roll toffee carrot cake. Jelly-o jelly fruitcake dragée tart jujubes lemon drops jujubes sweet. Dessert powder powder. Pastry cookie cheesecake. Brownie topping oat cake halvah halvah cookie. Tiramisu bonbon jelly. Halvah apple pie bear claw sweet toffee apple pie. Sweet roll powder toffee sweet roll muffin. Chupa chups pastry chupa chups toffee danish cupcake biscuit icing caramels.'"
+          >
+            <img
+              src="https://www.picknpay.fi/editor_files/image/EiKuvaa.jpg"
+              alt="profilephoto"
+            />
+          </a>
+        </h4>
+      </h3>
+    </li>
+  </ul>
+</section>

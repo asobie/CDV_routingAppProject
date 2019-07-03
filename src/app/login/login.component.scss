@@ -1,0 +1,59 @@
+section {
+  position: relative;
+  margin: 5vw 10vw;
+  padding: 2vw;
+  margin-bottom: 80px;
+  border: 1px solid black;
+  width: 35vw;
+  font-family: Roboto Condensed;
+
+  label {
+    margin-right: 1vw;
+    font-family: Tahoma;
+    font-weight: 100;
+    text-transform: uppercase;
+  }
+
+  input {
+    border: 1px solid lightslategrey;
+    width: 10vw;
+
+    .invalid {
+      border: 2px solid red;
+    }
+    .alert {
+      color: red;
+    }
+  }
+
+  button {
+    position: relative;
+    margin-top: 20px;
+    left: 0;
+    font-size: 16px;
+    text-transform: uppercase;
+
+    a {
+      color: white;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+  }
+
+  p {
+    position: absolute;
+    display: block;
+    font-size: 16px;
+    right: 5%;
+
+    a {
+      color: rgb(41, 134, 41);
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+
+    a:hover {
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+section {
+  margin: 5vw 10vw;
+
+  input,
+  select,
+  .alert {
+    width: 20vw;
+  }
+
+  div {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    h1 {
+      font-family: Tahoma;
+
+    }
+
+    button {
+      margin-right: 10px;
+    }
+
+
+  }
+
+  .returnBtn {
+    display: block;
+    margin-bottom: 20px;
+  }
+}
